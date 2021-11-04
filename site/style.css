@@ -1,0 +1,278 @@
+/* Eléments principaux de la page */
+body{
+background: url("images/fond_jaune.png");
+font-family: 'Trebuchet MS', Arial, sans-serif;
+color: #181818;
+}
+section h1, footer h1, nav a{
+font-family: Dayrom, serif;
+font-weight: normal;
+text-transform: uppercase;
+}
+a{
+text-decoration: none;
+color: blue;
+font-size: italic;
+}
+a:hover{
+text-decoration: underline;
+color: red;
+}
+
+/* Header */
+header{
+background: url('images/sep2.png') repeat-x bottom;
+}
+header h1{
+font-family: 'BallparkWeiner', serif;
+font-size: 2.5em;
+font-weight: normal;
+}
+header h2{
+font-family: Dayrom, serif;
+font-size: 1.1em;
+margin-top: 0px;
+font-weight: normal;
+}
+#logo, header h1{
+display: inline-block;
+margin-bottom: 0px;
+}
+
+/* Navigation */
+html {
+    font-family: 'lato';
+}
+
+.navigationCheckbox {
+    display: none;
+}
+
+.navigationBg {
+    height: 2.3rem;
+    width: 2.3rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 2.5rem;
+    right: 1rem;
+    background-image: radial-gradient(#c3073f, blue);
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+
+.navigationBtn {
+    background-color: #fff;
+    height: 3rem;
+    width: 3rem;
+    position: fixed;
+    top: 2rem;
+    right: 0.5rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.navigationIcon {
+    position: relative;
+    margin-top: 1.3rem;
+    width: 1rem;
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+}
+
+.navigationIcon::before,
+.navigationIcon::after {
+    width: 1rem;
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s;
+}
+
+.navigationIcon::before {
+    top: -.5rem;
+}
+
+.navigationIcon::after {
+    top: .5rem;
+}
+
+
+.nav {
+    height: 100vh;
+    position: fixed;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1500;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.navigationListe {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    text-align: center;
+    width: 100%;
+}
+
+
+.liens {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgb(7, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.navigationCheckbox:checked ~ .navigationBg {
+    transform: scale(100);
+}
+
+
+.navigationCheckbox:checked ~ .nav {
+    
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
+
+
+.navigationCheckbox:checked+ .navigationBtn .navigationIcon {
+    background-color: transparent;
+}
+
+.navigationCheckbox:checked+ .navigationBtn .navigationIcon::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+.navigationCheckbox:checked+ .navigationBtn .navigationIcon::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+/* Corps */
+article, aside{
+display: inline-block;
+vertical-align: top;
+text-align: justify;
+}
+article{
+width: 1000px;
+margin-right: 15px;
+}
+article p{
+font-size: 0.8em;
+}
+aside{
+position: relative;
+width: 235px;
+background-color: #706b64;
+box-shadow: 0px 2px 5px #1c1a19;
+border-radius: 5px;
+padding: 10px;
+color: white;
+font-size: 0.9em;
+}
+
+/* Footer */
+footer{
+background: url('images/fl1.png') no-repeat top center,
+url('images/sep2.png') repeat-x top, url('images/ombre.png')
+repeat-x top;
+padding-top: 85px;
+}
+footer p, footer ul{
+font-size: 0.8em;
+}
+footer h1{
+font-size: 1.1em;
+}
+#tweet, #mes_photos, #mes_amis{
+display: inline-block;
+vertical-align: top;
+}
+#tweet{
+width: 28%;
+}
+#mes_photos{
+width: 35%;
+}
+#mes_amis{
+width: 31%;
+}
+#mes_photos img{
+border: 1px solid #181818;
+margin-right: 2px;
+}
+#mes_amis ul{
+display: inline-block;
+vertical-align: top;
+margin-top: 0;
+width: 47%;
+list-style-image: url('images/ico_liensexterne.png');
+padding-left: 2px;
+list-style-position: inside;
+}
+#mes_amis a{
+text-decoration: none;
+color: #760001;
+}
+textarea {
+   resize: none;
+}
+
+/*RESPONSIVE*/
+    @media screen and (max-width: 750px) {
+    h1 {
+    font-size: 1em;
+    }
+    h2 {
+        font-size: 1em;
+        }
+    p {
+        font-size: 0.9em;
+    }
+    #mes_photos{
+        display : none
+    }
+    #tweet{
+        width: 100%;
+    }
+    #mes_amis{
+        width: 100%;
+    }
+    }
+    
+
+    @media screen and (max-width: 500px) {
+        h1 {
+            font-size: 0.9em;
+            }
+
+    }
+
+    @media screen and (max-width: 380px){
+        .img{
+            width: 90%;
+        }
+        .img{
+            width: 80%;
+        }
+        
+    }
+
+    

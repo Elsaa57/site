@@ -1,0 +1,58 @@
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   FORM !!!!!!!!!!!!!*
+   
+   
+   <form action="ton_fichier_.php" method="POST">
+   
+   <input type="text" name="nom" placeholder="Nom" required>
+            <input type="text" name="prenom"  placeholder="Prenom" required>
+            <input type="email" name="email" placeholder="email" required>
+             <input type="number" name="age" placeholder="age" required>
+             <input type="submit" >
+             
+             </form>
+             
+             
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PHP !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  
+  <?php
+  
+  ****** recuperer les champs grace a leur name **********
+  
+$name = $_POST['prenom'];
+$lastName = $_POST['nom'];
+$age = $_POST['age'];
+$message = 'salut';
+
+
+*********** ce qui apparaitra dans l'en-tete du mail ******************
+
+$headers = "From:  Reservation Métamorphose";
+
+
+****************** contenu du mail **********************************
+
+$txt = "you have received an e-mail from " . $name . ".\n\n" . $message . "j'ai" . $age . "ans";
+
+
+********************* fonction qui envoie le mail ********************************
+
+mail("tonemail@gmail.com", $txt, $headers);
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+  
+  
